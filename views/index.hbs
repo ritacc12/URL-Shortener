@@ -11,12 +11,14 @@
     </div>
     {{#if shortURL}}
     <div class="mb-3">        
-                <h3>Success! Please use this link:</h3>
-                <a href='http://localhost:3000/{{shortURL}}' id="newURL" target="_blank">http://localhost:3000/{{shortURL}}</a>
+                <p class="fs-2 fw-bolder">Success! Please use this link:</p>
+                <a href='http://localhost:3000/{{shortURL}}' id="newURL" target="_blank" class="">http://localhost:3000/{{shortURL}}</a>
     </div>
-    <button class="copy mb-3 btn btn-primary" onclick="copy()">Copy</button>
-    <a href="http://localhost:3000/"> home </a>
-   
+    <div class="d-grid gap-2 col-4 mx-auto">
+    <button class="btn btn-outline-success" type="button" onclick="copy()">Copy</button>
+    <button class="btn btn-outline-primary"><a href="http://localhost:3000/">Home</a></button>
+    </div>
+
     <script>
         function copy() {
             const URL = document.querySelector("#newURL")
@@ -28,14 +30,14 @@
     </div>
    
     {{else}}
-    <div class="mb-3">
+    <div class="mb-3 d-flex justify-content-center">
         <form action="/shortURL" method="post">
         <label for="URL" class="form-label mt-10" ><h3>URL:</h3></label>
         <input type="url" class="form-control" id="inputURL"
         name="inputURL"
-        aria-describedby="emailHelp" placeholder="Please input the URL">
+        placeholder="Please input URL here">
     </div>
-    <button type="submit" class="btn btn-primary me-md-5">Submit</button>
+    <button type="submit" class="btn btn-outline-dark col-4 mx-auto">Shorten</button>
 </form>
     {{/if}}
 </div>
