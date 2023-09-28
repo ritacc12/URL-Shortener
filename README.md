@@ -26,7 +26,7 @@ git clone https://github.com/ritacc12/URL-Shortener.git
 2. Used terminal to open the file
 
 ```bash
-cd shorten-URL
+cd URL-Shortener
 ```
 
 3. Install npm package
